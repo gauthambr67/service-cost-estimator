@@ -67,7 +67,7 @@ export default class SignUpForm extends Component {
               onChange={this.handleChange}
               required
             />
-            <label>Confirm</label>
+            <label>Confirm Password</label>
             <input
               type="password"
               name="confirm"
