@@ -1,6 +1,8 @@
 import React from "react";
 import "./NewOrderPage.css";
-import { useState, useEffect} from 'react';
+import { useState, useEffect, useRef} from 'react';
+import * as ordersAPI from '../../utilities/orders-api';
+import * as itemsAPI from '../../utilities/items-api';
 import { Link } from 'react-router-dom';
 import MenuList from '../../components/MenuList/MenuList';
 import CategoryList from '../../components/CategoryList/CategoryList';
