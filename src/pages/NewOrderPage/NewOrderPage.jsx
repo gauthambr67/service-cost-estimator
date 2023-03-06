@@ -1,23 +1,26 @@
-import React from "react";
-import "./NewOrderPage.css";
-import { useState, useEffect, useRef} from 'react';
-import * as ordersAPI from '../../utilities/orders-api';
-import * as itemsAPI from '../../utilities/items-api';
-import { Link } from 'react-router-dom';
-import MenuList from '../../components/MenuList/MenuList';
-import CategoryList from '../../components/CategoryList/CategoryList';
-import OrderDetail from '../../components/OrderDetail/OrderDetail';
-import UserLogOut from '../../components/UserLogOut/UserLogOut';
+import { useState, useEffect, useRef } from "react";
 
-function NewOrderPage({ user, setUser }) {
+import "./NewOrderPage.css";
+import * as itemsAPI from "../../utilities/items-api";
+import { Link } from "react-router-dom";
+import Logo from "../../components/Logo/Logo";
+import MenuList from "../../components/MenuList/MenuList";
+import CategoryList from "../../components/CategoryList/CategoryList";
+import OrderDetail from "../../components/OrderDetail/OrderDetail";
+import UserLogOut from "../../components/UserLogOut/UserLogOut";
+
+export default function NewOrderPage({ user, setUser }) {
   const [menuItems, setMenuItems] = useState([]);
   const [activeCat, setActiveCat] = useState('');
   const categoriesRef = useRef([]);
 
-  useEffect(function() {
+
+  useEffect(function () {
     async function getItems() {
       const items = await itemsAPI.getAll();
-      categoriesRef.current = [...new Set(items.map(item => item.category.name))];
+      categoriesRef.current = [
+        ...new Set(items.map((item) => item.category.name)),
+      ];
       setMenuItems(items);
       setActiveCat(categoriesRef.current[0]);
     }
@@ -25,7 +28,7 @@ function NewOrderPage({ user, setUser }) {
   }, []);
   // An empty dependency array results in the effect
   // function running ONLY after the FIRST render
-  
+
   return (
     <main className="NewOrderPage">
       <aside>
@@ -35,15 +38,16 @@ function NewOrderPage({ user, setUser }) {
           activeCat={activeCat}
           setActiveCat={setActiveCat}
         />
-        <Link to="/orders" className="button btn-sm">PREVIOUS ORDERS</Link>
+        <Link to="/orders" className="button btn-sm">
+          PREVIOUS ORDERS
+        </Link>
         <UserLogOut user={user} setUser={setUser} />
       </aside>
       <MenuList
-        menuItems={menuItems.filter(item => item.category.name === activeCat)}
+        menuItems={menuItems.filter((item) => item.category.name === activeCat)}
       />
       <OrderDetail />
     </main>
   );
 }
 
-export default NewOrderPage;
