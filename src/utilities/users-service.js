@@ -1,14 +1,13 @@
 import * as usersAPI from "./users-api";
-import sendRequest from "./send-request";
-const BASE_URL = "/api/users";
 
 export async function signUp(userData) {
   const token = await usersAPI.signUp(userData);
   localStorage.setItem("token", token);
   return getUser();
 }
-export async function login(userData) {
-  const token = await usersAPI.login(userData);
+
+export async function login(credentials) {
+  const token = await usersAPI.login(credentials);
   localStorage.setItem("token", token);
   return getUser();
 }
