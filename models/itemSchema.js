@@ -6,7 +6,7 @@ const itemSchema = new Schema(
     emoji: String,
     category: { type: Schema.Types.ObjectId, ref: "Category" },
     price: { type: Number, required: true, default: 0 },
-    date: { type: Date, required: true },
+    date: { type: Date },
   },
   {
     timestamps: true,
