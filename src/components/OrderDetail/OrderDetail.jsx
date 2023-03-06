@@ -39,10 +39,10 @@ export default function OrderDetail({
               ) : (
                 <button
                   className="btn-sm"
-                  onClick={handleCheckout}
+                  onClick={handleEstimate}
                   disabled={!lineItems.length}
                 >
-                  CHECKOUT
+                  ESTIMATE
                 </button>
               )}
               <span>{order.totalQty}</span>
