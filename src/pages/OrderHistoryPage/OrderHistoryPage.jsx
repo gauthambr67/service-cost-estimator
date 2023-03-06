@@ -7,7 +7,7 @@ import { checkToken } from "../../utilities/users-service";
 import Logo from "../../components/Logo/Logo";
 import UserLogOut from "../../components/UserLogOut/UserLogOut";
 import OrderDetail from "../../components/OrderDetail/OrderDetail";
-import OrderList from "../../components/OrderDetail/OrderList";
+import OrderList from "../../components/OrderList/OrderList";
 
 export default function OrderHistoryPage({ user, setUser }) {
   const [orders, setOrders] = useState([]);

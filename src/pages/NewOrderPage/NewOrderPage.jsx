@@ -49,7 +49,7 @@ export default function NewOrderPage({ user, setUser }) {
   }
 
   async function handleEstimate() {
-    await ordersAPI.checkout();
+    await ordersAPI.estimate();
     navigate("/orders");
   }
 
