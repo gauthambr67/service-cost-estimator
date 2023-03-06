@@ -9,7 +9,7 @@ router.get("/user", ordersCtrl.forUser);
 
 router.post("/cart/items/:id", ordersCtrl.addToCart);
 
-router.post("/cart/estimate", ordersCtrl.checkout);
+router.post("/cart/estimate", ordersCtrl.estimate);
 
 router.put("/cart/qty", ordersCtrl.setItemQtyInCart);
 
