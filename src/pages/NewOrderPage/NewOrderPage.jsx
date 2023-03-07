@@ -55,27 +55,44 @@ export default function NewOrderPage({ user, setUser }) {
 
   return (
     <main className="NewOrderPage">
-      <aside>
-        <Logo />
+      <div className="topheader">
+        <div className="left">
+          <Logo />
+        </div>
+        <div className="right">
+          <h2>Account Detail</h2>
+          <button>
+            <Link to="/orders">Service History</Link>
+          </button>
+          <UserLogOut user={user} setUser={setUser} />
+        </div>
+      </div>
+      <nav>
         <CategoryList
           categories={categoriesRef.current}
           activeCat={activeCat}
           setActiveCat={setActiveCat}
         />
-        <Link to="/orders" className="button btn-sm">
-          PREVIOUS ORDERS
-        </Link>
-        <UserLogOut user={user} setUser={setUser} />
+      </nav>
+      <aside>
+        <div className="Loginfo">
+          <MenuList
+            menuItems={menuItems.filter(
+              (item) => item.category.name === activeCat
+            )}
+            handleAddToOrder={handleAddToOrder}
+          />
+          {/* <button>
+            <Link to="/orders">Service History</Link>
+          </button>
+          <UserLogOut user={user} setUser={setUser} /> */}
+        </div>
+        <OrderDetail
+          order={cart}
+          handleChangeQty={handleChangeQty}
+          handleEstimate={handleEstimate}
+        />
       </aside>
-      <MenuList
-        menuItems={menuItems.filter((item) => item.category.name === activeCat)}
-        handleAddToOrder={handleAddToOrder}
-      />
-      <OrderDetail
-        order={cart}
-        handleChangeQty={handleChangeQty}
-        handleEstimate={handleEstimate}
-      />
     </main>
   );
 }

@@ -6,6 +6,7 @@ const itemSchema = require("./itemSchema");
 const lineItemSchema = new Schema(
   {
     qty: { type: Number, default: 1 },
+    hours: {type: Number},
     item: itemSchema,
   },
   {
@@ -15,6 +16,10 @@ const lineItemSchema = new Schema(
 );
 lineItemSchema.virtual("extPrice").get(function(){
   return this.qty * this.item.price
+})
+
+lineItemSchema.virtual("extHours").get(function(){
+  return this.item.hours * this.qty
 })
 
 const orderSchema = new Schema({
@@ -28,6 +33,10 @@ const orderSchema = new Schema({
 
 orderSchema.virtual('orderTotal').get(function() {
   return this.lineItems.reduce((total, item) => total + item.extPrice, 0);
+})
+
+orderSchema.virtual('totalHours').get(function() {
+  return this.lineItems.reduce((total, item) => total + item.extHours, 0);
 })
 
 orderSchema.virtual('totalQty').get(function() {

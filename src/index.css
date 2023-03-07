@@ -62,9 +62,6 @@ code {
   justify-content: flex-end;
 }
 
-.scroll-y {
-  overflow-y: scroll;
-}
 
 .section-heading {
   display: flex;
