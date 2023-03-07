@@ -15,7 +15,7 @@ export function setItemQtyInCart(itemId, newQty) {
 }
 
 export function estimate() {
-  return sendRequest(`${BASE_URL}/cart/checkout`, "POST");
+  return sendRequest(`${BASE_URL}/cart/estimate`, "POST");
 }
 
 export function getAllForUser() {
