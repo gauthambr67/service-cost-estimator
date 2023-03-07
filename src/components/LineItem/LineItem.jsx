@@ -28,6 +28,7 @@ export default function LineItem({ lineItem, isPaid, handleChangeQty }) {
         )}
       </div>
       <div className="ext-price">${lineItem.extPrice.toFixed(2)}</div>
+      <br />
     </div>
   );
 }

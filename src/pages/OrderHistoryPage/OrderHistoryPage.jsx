@@ -24,21 +24,24 @@ export default function OrderHistoryPage({ user, setUser }) {
 
   return (
     <main className="OrderHistoryPage">
-      <aside>
-        <Logo />
-        <Link to="/orders/new" className="button btn-sm">
-          NEW ORDER
-        </Link>
-        <UserLogOut user={user} setUser={setUser} />
+      <Logo />
+      <aside className="orderHistory">
+        <div>
+          <OrderList
+            orders={orders}
+            selectedOrder={selectedOrder}
+            setSelectedOrder={setSelectedOrder}
+          />
+          <button>
+            <Link to="/orders/new" >
+              NEW SERVICE
+            </Link>
+          </button>
+          <UserLogOut user={user} setUser={setUser} />
+        </div>
+
+        <OrderDetail order={selectedOrder} />
       </aside>
-
-      <OrderList
-        orders={orders}
-        selectedOrder={selectedOrder}
-        setSelectedOrder={setSelectedOrder}
-      />
-
-      <OrderDetail order={selectedOrder} />
     </main>
   );
 }

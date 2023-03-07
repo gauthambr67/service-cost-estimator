@@ -14,12 +14,14 @@ export default function OrderListItem({ order, isSelected, setSelectedOrder }) {
           {new Date(order.createdAt).toLocaleDateString()}
         </div>
       </div>
-      <div className="align-rt">
+
+      <div>
         <div>${order.orderTotal.toFixed(2)}</div>
         <div className="smaller">
           {order.totalQty} Item{order.totalQty > 1 && "s"}
         </div>
       </div>
+      <br />
     </div>
   );
 }

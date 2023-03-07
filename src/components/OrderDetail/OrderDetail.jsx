@@ -29,13 +29,13 @@ export default function OrderDetail({
         )}
         <span>{new Date(order.updatedAt).toLocaleDateString()}</span>
       </div>
-      <div className="line-item-container flex-ctr-ctr flex-col scroll-y">
+      <div>
         {lineItems.length ? (
           <>
             {lineItems}
             <section className="total">
               {order.isPaid ? (
-                <span className="right">TOTAL&nbsp;&nbsp;</span>
+                <span>TOTAL</span>
               ) : (
                 <button
                   className="btn-sm"
@@ -45,8 +45,9 @@ export default function OrderDetail({
                   ESTIMATE
                 </button>
               )}
-              <span>{order.totalQty}</span>
-              <span className="right">${order.orderTotal.toFixed(2)}</span>
+              <span>Quanity: {order.totalQty}</span>
+              <br />
+              <span>Price: ${order.orderTotal.toFixed(2)}</span>
             </section>
           </>
         ) : (
