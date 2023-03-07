@@ -39,7 +39,7 @@ const Item = require("./models/item");
 
   await Item.deleteMany({});
   const items = await Item.create([
-    { name: "Detailing", emoji: "✨", category: categories[0], price: 75 },
+    { name: "Detailing", emoji: "✨", category: categories[0], price: 75, hours: 2},
     {
       name: "Dent Removal (per panel)",
       emoji: "🔨",
@@ -91,7 +91,7 @@ const Item = require("./models/item");
       price: 60,
       hours: 1,
     },
-    { name: "Brake Overhaul", emoji: "𓇳", category: categories[2], price: 75 },
+    { name: "Brake Overhaul", emoji: "𓇳", category: categories[2], price: 75, hours:2, },
     {
       name: "Clutch Assembly Replacement",
       emoji: "⚙⚙",
