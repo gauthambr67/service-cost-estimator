@@ -7,6 +7,7 @@ export default function LineItem({ lineItem, isPaid, handleChangeQty }) {
       <div className="flex-ctr-ctr flex-col">
         <span className="align-ctr">{lineItem.item.name}</span>
         <span>{lineItem.item.price.toFixed(2)}</span>
+        <span className="align-ctr">{lineItem.item.hours} Hours</span>
 
       </div>
       <div className="qty" style={{ justifyContent: isPaid && "center" }}>
