@@ -7,7 +7,8 @@ import Logo from "../../components/Logo/Logo";
 export default function AuthPage({ setUser }) {
   const [showSignUp, setShowSignUp] = useState(false);
   return (
-    <main>
+    <main className="authpage">
+      <Logo />
       <h1>Login/Sign Up</h1>
       <button onClick={() => setShowSignUp(!showSignUp)}>
         {showSignUp ? "Log In" : "Sign Up"}

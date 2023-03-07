@@ -1,4 +1,4 @@
-/* main {
+.authpage {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -69,4 +69,4 @@ button[type="submit"] {
 
 button[type="submit"]:hover {
   background-color: #6b8e3f;
-} */
+}
