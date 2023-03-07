@@ -63,20 +63,25 @@ export default function NewOrderPage({ user, setUser }) {
           setActiveCat={setActiveCat}
         />
       </nav>
-        <Link to="/orders" className="button btn-sm">
-          PREVIOUS ORDERS
-        </Link>
-        <UserLogOut user={user} setUser={setUser} />
-
-      <MenuList
-        menuItems={menuItems.filter((item) => item.category.name === activeCat)}
-        handleAddToOrder={handleAddToOrder}
-      />
-      <OrderDetail
-        order={cart}
-        handleChangeQty={handleChangeQty}
-        handleEstimate={handleEstimate}
-      />
+      <aside>
+        <div className="Loginfo">
+          <MenuList
+            menuItems={menuItems.filter(
+              (item) => item.category.name === activeCat
+            )}
+            handleAddToOrder={handleAddToOrder}
+          />
+          <button>
+            <Link to="/orders">Service History</Link>
+          </button>
+          <UserLogOut user={user} setUser={setUser} />
+        </div>
+        <OrderDetail
+          order={cart}
+          handleChangeQty={handleChangeQty}
+          handleEstimate={handleEstimate}
+        />
+      </aside>
     </main>
   );
 }
