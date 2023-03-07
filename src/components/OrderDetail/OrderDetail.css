@@ -45,3 +45,7 @@
     top: 50vh;
     font-size: 2vmin;
   }
+
+  .orderTitle{
+    padding-right: 6rem;
+  }
