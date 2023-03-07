@@ -24,7 +24,18 @@ export default function OrderHistoryPage({ user, setUser }) {
 
   return (
     <main className="OrderHistoryPage">
-      <Logo />
+      <div className="topheader">
+        <div className="left">
+          <Logo />
+        </div>
+        <div className="right">
+          <h2>Account Detail</h2>
+          <button>
+            <Link to="/orders/new">NEW SERVICE</Link>
+          </button>
+          <UserLogOut user={user} setUser={setUser} />
+        </div>
+      </div>
       <aside className="orderHistory">
         <div>
           <OrderList
@@ -32,12 +43,6 @@ export default function OrderHistoryPage({ user, setUser }) {
             selectedOrder={selectedOrder}
             setSelectedOrder={setSelectedOrder}
           />
-          <button>
-            <Link to="/orders/new" >
-              NEW SERVICE
-            </Link>
-          </button>
-          <UserLogOut user={user} setUser={setUser} />
         </div>
 
         <OrderDetail order={selectedOrder} />

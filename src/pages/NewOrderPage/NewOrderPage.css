@@ -41,3 +41,13 @@ aside {
   display: flex;
   flex-direction: row;
 }
+
+.topheader {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 2px solid black;
+  margin-top: 0;
+}
+
+

@@ -55,8 +55,19 @@ export default function NewOrderPage({ user, setUser }) {
 
   return (
     <main className="NewOrderPage">
+      <div className="topheader">
+        <div className="left">
+          <Logo />
+        </div>
+        <div className="right">
+          <h2>Account Detail</h2>
+          <button>
+            <Link to="/orders">Service History</Link>
+          </button>
+          <UserLogOut user={user} setUser={setUser} />
+        </div>
+      </div>
       <nav>
-        <Logo />
         <CategoryList
           categories={categoriesRef.current}
           activeCat={activeCat}
@@ -71,10 +82,10 @@ export default function NewOrderPage({ user, setUser }) {
             )}
             handleAddToOrder={handleAddToOrder}
           />
-          <button>
+          {/* <button>
             <Link to="/orders">Service History</Link>
           </button>
-          <UserLogOut user={user} setUser={setUser} />
+          <UserLogOut user={user} setUser={setUser} /> */}
         </div>
         <OrderDetail
           order={cart}
