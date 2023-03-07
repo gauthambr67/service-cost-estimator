@@ -48,7 +48,7 @@ export default function OrderDetail({
               <span>Quanity: {order.totalQty}</span>
               <br />
               <span>Price: ${order.orderTotal.toFixed(2)}</span>
-              <span>Estimate: {order.totalHours}</span>
+              <span>Estimate Hours: {order.totalHours} </span>
             </section>
           </>
         ) : (

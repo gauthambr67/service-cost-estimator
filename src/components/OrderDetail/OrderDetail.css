@@ -33,6 +33,7 @@
     align-items: center;
     font-size: 1.5vw;
     color: black;
+    width: 200px;
   }
   
   .OrderDetail .total span.right {
