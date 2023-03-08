@@ -6,7 +6,7 @@ const itemSchema = require("./itemSchema");
 const lineItemSchema = new Schema(
   {
     qty: { type: Number, default: 1 },
-    hours: {type: Number},
+    hours: {type: Number, default: 0 },
     item: itemSchema,
   },
   {
