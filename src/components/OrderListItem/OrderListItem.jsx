@@ -21,6 +21,7 @@ export default function OrderListItem({ order, isSelected, setSelectedOrder }) {
           <div className="smaller">
             {order.totalQty} Item{order.totalQty > 1 && "s"}
           </div>
+          <div>Estimated {order.totalHours} Hours</div>
         </div>
       </div>
     </div>
