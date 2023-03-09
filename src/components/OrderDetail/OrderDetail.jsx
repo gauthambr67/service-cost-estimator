@@ -1,5 +1,6 @@
 import "./OrderDetail.css";
 import LineItem from "../LineItem/LineItem";
+// import { useHistory } from "react-router-dom";
 
 export default function OrderDetail({
   order,
@@ -17,6 +18,15 @@ export default function OrderDetail({
     />
   ));
 
+  // const history = useHistory();
+  function handleUpdateOrder() {
+    console.log("updating order");
+    window.location.href = "/orders/new";
+    // history.push("/orders/new");
+  }
+  function handleDeleteOrder() {
+    console.log("deleting order");
+  }
   return (
     <div className="OrderDetail">
       <div className="section-heading">
@@ -45,11 +55,15 @@ export default function OrderDetail({
                   ESTIMATE
                 </button>
               )}
-              <span>Quanity: {order.totalQty}</span>
+              <span>Quantity: {order.totalQty}</span>
               <br />
               <span>Price: ${order.orderTotal.toFixed(2)}</span>
               <span>Estimate Hours: {order.totalHours} </span>
             </section>
+            <div>
+              <button onClick={handleUpdateOrder}>Update Order</button>
+              <button onClick={handleDeleteOrder}>Delete Order</button>
+            </div>
           </>
         ) : (
           <div className="service">Need a service?</div>
