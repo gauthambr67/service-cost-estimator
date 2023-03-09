@@ -19,14 +19,7 @@ export default function OrderDetail({
   ));
 
   // const history = useHistory();
-  function handleUpdateOrder() {
-    console.log("updating order");
-    window.location.href = "/orders/new";
-    // history.push("/orders/new");
-  }
-  function handleDeleteOrder() {
-    console.log("deleting order");
-  }
+
   return (
     <div className="OrderDetail">
       <div className="section-heading">
