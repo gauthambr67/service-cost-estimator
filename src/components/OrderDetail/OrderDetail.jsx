@@ -60,10 +60,6 @@ export default function OrderDetail({
               <span>Price: ${order.orderTotal.toFixed(2)}</span>
               <span>Estimate Hours: {order.totalHours} </span>
             </section>
-            <div>
-              <button onClick={handleUpdateOrder}>Update Order</button>
-              <button onClick={handleDeleteOrder}>Delete Order</button>
-            </div>
           </>
         ) : (
           <div className="service">Need a service?</div>
