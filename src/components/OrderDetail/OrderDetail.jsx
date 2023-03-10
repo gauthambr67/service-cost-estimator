@@ -18,8 +18,6 @@ export default function OrderDetail({
     />
   ));
 
-  // const history = useHistory();
-
   return (
     <div className="OrderDetail">
       <div className="section-heading">
