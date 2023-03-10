@@ -1,6 +1,4 @@
-# Service Cost Estimator
-
-### Welcome to eAuctions! 🚘
+# Service Cost Estimator 🚘🔧🕓💸
 
 This is a Single Page Application (SPA) web application for estimating the cost of services at a car garage. Users can create an account and ascertaing the cost for various services they need and pick the service items from across multiple categories. They can access the order history to look at previously selected service orders as well. This allows the user to plan their expenses accordingly and get a fair estimate of the cost of services at the car garage without reaching out to the garage. 
 
@@ -31,7 +29,7 @@ After selecting all the items from all the categories of work you require, you c
 
 You can view the previous orders by clicking on the "Service History" button. Further, you can select the order you want to view the details of, and the update or delete the order. 
 
-### Link to project deployed on Heroku: 
+### Link to project deployed on Heroku: https://service-cost-estimator.herokuapp.com/
 
 ## Wireframing & ERD 📝
 
