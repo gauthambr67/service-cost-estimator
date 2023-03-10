@@ -12,6 +12,9 @@
     font-size: 1.5vmin;
     margin-top: 2.3rem;
   }
+  .MenuListItem:hover {
+    background-color: lightgrey;
+  }
   
   .MenuListItem .emoji {
     height: 8vw;
