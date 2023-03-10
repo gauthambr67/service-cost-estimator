@@ -6,7 +6,7 @@ This is a Single Page Application (SPA) web application for estimating the cost 
 
 - Token based user registration and authentication
 - View all the services available under different categories
-- Choose specific items, add to cart and get a toal estimated cost 
+- Choose specific items, add to cart and get a total estimated cost 
 - View the order history with ability to view individual service items of the order
 - Ability to delete orders from order history 
 - Ability to update orders to change the service items in the order
@@ -50,23 +50,16 @@ You can view the previous orders by clicking on the "Service History" button. Fu
 
 ## Technologies Used 💻
 
-### React
-### HTML5
-### CSS3
-### JavaScript
-### Node JS
-### MongoDB
+React | HTML5 | CSS3 | JavaScript | Node JS | MongoDB
 
 ## Tools used
 
-### VisualStudio Code
-### Trello Board
-### Figma
+VisualStudio Code | Trello Board | Figma | POSTMAN
 
 
-## Icebox Features 🧊
-Next steps:
+## Next steps:
 
+- Have the update function allow for changing item quantity and add new items
 - Display message upon selecting estimation - giving details of order in the same page
 - Allow scheduling the service on different dates
 - Have a facility for booking appointments for service
