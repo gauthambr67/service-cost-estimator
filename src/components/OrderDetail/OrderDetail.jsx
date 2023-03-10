@@ -32,7 +32,7 @@ export default function OrderDetail({
         )}
         <span>{new Date(order.updatedAt).toLocaleDateString()}</span>
       </div>
-      <div>
+      <div className="pricing">
         {lineItems.length ? (
           <>
             {lineItems}
