@@ -40,10 +40,12 @@ You can view the previous orders by clicking on the "Service History" button. Fu
 
 ## Screenshots of the completed app 📝
 
-![SS](https:)
-![SS](https:)
-![SS](https:)
-![SS](https:)
+![Screen Shot 2023-03-10 at 09 15 52](https://user-images.githubusercontent.com/116613845/224339615-0388fa2f-e4af-4003-837f-5ab46d5df5bc.png)
+![Screen Shot 2023-03-10 at 09 16 12](https://user-images.githubusercontent.com/116613845/224339642-9cc0efb0-8d19-4f10-b00b-02044004da48.png)
+![Screen Shot 2023-03-10 at 09 17 13](https://user-images.githubusercontent.com/116613845/224339663-2fe748e4-2418-43ed-9fd3-3cae7e914aa9.png)
+![Screen Shot 2023-03-10 at 09 17 44](https://user-images.githubusercontent.com/116613845/224339678-33fde109-72c5-47f4-92de-22a38d4ea366.png)
+![Screen Shot 2023-03-10 at 09 18 16](https://user-images.githubusercontent.com/116613845/224339695-ef2a8d32-37c7-4a1f-bc71-a07fb2fd0eb3.png)
+
 
 
 ## Technologies Used 💻
