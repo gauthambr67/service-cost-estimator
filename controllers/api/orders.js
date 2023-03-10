@@ -6,6 +6,7 @@ module.exports = {
   setItemQtyInCart,
   estimate,
   forUser,
+  deleteOrder,
 };
 
 async function forUser(req, res) {
@@ -38,3 +39,14 @@ async function estimate(req, res) {
   await cart.save();
   res.json(cart);
 }
+
+async function deleteOrder(req, res) {
+  const orderId = req.params.orderId;
+  try {
+    await Order.findByIdAndDelete(orderId);
+    res.json({orderId});
+  } catch (error) {
+    console.error(error);
+    res.status(500).send({ message: "Error deleting order" });
+  }
+};
