@@ -4,7 +4,6 @@ import { handleDelete } from "../../utilities/orders-api";
 // import { handleEstimate } from "../../pages/NewOrderPage/NewOrderPage";
 // import * as ordersAPI from "../../utilities/orders-api";
 
-
 export default function OrderListItem({ order, isSelected, setSelectedOrder }) {
   //   const [afterDelete, setAfterDelete] = useState("");
   //   const onDeleteClick = useCallback(
@@ -35,7 +34,14 @@ export default function OrderListItem({ order, isSelected, setSelectedOrder }) {
             {order.totalQty} Item{order.totalQty > 1 && "s"}
           </div>
           <div>Estimated {order.totalHours} Hours</div>
-          <button onClick={() => handleDelete(order.orderId).then()}>
+          {/* <button onClick={() => handleDelete(order.orderId).then()}>
+            Delete
+          </button> */}
+          <button
+            onClick={() =>
+              handleDelete(order.orderId).then(() => window.location.reload())
+            }
+          >
             Delete
           </button>
         </div>
