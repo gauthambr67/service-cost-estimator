@@ -13,6 +13,6 @@ router.post("/cart/estimate", ordersCtrl.estimate);
 
 router.put("/cart/qty", ordersCtrl.setItemQtyInCart);
 
-router.delete("/orders/:id", ordersCtrl.deleteOrder);
+router.delete("/:id", ordersCtrl.deleteOrder);
 
 module.exports = router;

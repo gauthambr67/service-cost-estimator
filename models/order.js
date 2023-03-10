@@ -47,7 +47,7 @@ orderSchema.virtual("totalQty").get(function () {
 });
 
 orderSchema.virtual("orderId").get(function () {
-  return this.id.slice(-6).toUpperCase();
+  return this.id;
 });
 
 orderSchema.statics.getCart = function (userId) {

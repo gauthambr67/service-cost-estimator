@@ -41,12 +41,12 @@ async function estimate(req, res) {
 }
 
 async function deleteOrder(req, res) {
-  const orderId = req.params.orderId;
+  const orderId = req.params.id;
   try {
     await Order.findByIdAndDelete(orderId);
-    res.json({orderId});
+    res.json({ orderId });
   } catch (error) {
     console.error(error);
     res.status(500).send({ message: "Error deleting order" });
   }
-};
+}

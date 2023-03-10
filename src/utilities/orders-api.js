@@ -23,5 +23,5 @@ export function getAllForUser() {
 }
 
 export function handleDelete(orderId) {
-  return sendRequest(`${BASE_URL}/orders/${orderId}`, "DELETE")
+  return sendRequest(`${BASE_URL}/${orderId}`, "DELETE");
 }
