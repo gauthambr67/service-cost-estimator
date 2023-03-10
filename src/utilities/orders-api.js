@@ -26,6 +26,6 @@ export function handleDelete(orderId) {
   return sendRequest(`${BASE_URL}/${orderId}`, "DELETE");
 }
 
-export function updateOrder(orderId) {
-  return sendRequest(`${BASE_URL}/${orderId}`, "PUT");
+export function updateOrder(orderId, payload) {
+  return sendRequest(`${BASE_URL}/updateorder/${orderId}`, "PUT", payload);
 }

@@ -6,8 +6,8 @@ import { Link, useNavigate } from "react-router-dom";
 
 export default function OrderListItem({ order, isSelected, setSelectedOrder }) {
   const navigate = useNavigate();
-  async function handleUpdate(orderId) {
-    await ordersAPI.updateOrder();
+  async function handleUpdate(orderId, payload) {
+    await ordersAPI.updateOrder(orderId, payload);
     navigate("/updateorder/", { id: orderId });
   }
   return (
@@ -31,7 +31,9 @@ export default function OrderListItem({ order, isSelected, setSelectedOrder }) {
             {order.totalQty} Item{order.totalQty > 1 && "s"}
           </div>
           <div>Estimated {order.totalHours} Hours</div>
-          <button onClick={() => handleUpdate(order.orderId)}>Update</button>
+          <button onClick={() => handleUpdate(order.orderId, {})}>
+            Update
+          </button>
           <button
             onClick={() =>
               handleDelete(order.orderId).then(navigate("/orders/new"))
