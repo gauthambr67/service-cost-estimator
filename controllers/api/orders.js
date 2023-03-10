@@ -45,6 +45,7 @@ async function deleteOrder(req, res) {
   try {
     await Order.findByIdAndDelete(orderId);
     res.json({ orderId });
+    
   } catch (error) {
     console.error(error);
     res.status(500).send({ message: "Error deleting order" });
