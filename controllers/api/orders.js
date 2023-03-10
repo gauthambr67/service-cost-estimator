@@ -7,6 +7,7 @@ module.exports = {
   estimate,
   forUser,
   deleteOrder,
+  updateOrder,
 };
 
 async function forUser(req, res) {
@@ -49,5 +50,21 @@ async function deleteOrder(req, res) {
   } catch (error) {
     console.error(error);
     res.status(500).send({ message: "Error deleting order" });
+  }
+}
+
+async function updateOrder(req, res) {
+  const orderId = req.params.id;
+  const updatedOrderData = req.body;
+
+  try {
+    await Order.findByIdAndUpdate(orderId, updatedOrderData, {
+      new: true,
+    }).then((updatedOrder) => {
+      res.json(updatedOrder);
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send({ message: "Error updating order" });
   }
 }

@@ -2,17 +2,15 @@ import React, { useCallback, useState } from "react";
 import "./OrderListItem.css";
 import { handleDelete } from "../../utilities/orders-api";
 // import { handleEstimate } from "../../pages/NewOrderPage/NewOrderPage";
-// import * as ordersAPI from "../../utilities/orders-api";
+import * as ordersAPI from "../../utilities/orders-api";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function OrderListItem({ order, isSelected, setSelectedOrder }) {
-  //   const [afterDelete, setAfterDelete] = useState("");
-  //   const onDeleteClick = useCallback(
-  //     (i) => {
-  //       handleDelete(i);
-  //     },
-  //     [afterDelete]
-  //   );
-
+  const navigate = useNavigate();
+  async function handleUpdate(orderId, payload) {
+    await ordersAPI.updateOrder(orderId, payload);
+    navigate("/updateorder/", { id: orderId });
+  }
   return (
     <div className="MenuListItem">
       <div
@@ -34,12 +32,12 @@ export default function OrderListItem({ order, isSelected, setSelectedOrder }) {
             {order.totalQty} Item{order.totalQty > 1 && "s"}
           </div>
           <div>Estimated {order.totalHours} Hours</div>
-          {/* <button onClick={() => handleDelete(order.orderId).then()}>
-            Delete
-          </button> */}
+          <button onClick={() => handleUpdate(order.orderId, {})}>
+            Update
+          </button>
           <button
             onClick={() =>
-              handleDelete(order.orderId).then(() => window.location.reload())
+              handleDelete(order.orderId).then(navigate("/orders/new"))
             }
           >
             Delete
